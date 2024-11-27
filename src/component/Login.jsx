@@ -1,12 +1,7 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../store/AuthSlice.js";
-import {
-  FiLock,
-  FiAlertCircle,
-  FiEye,
-  FiEyeOff,
-} from './Icons'
+import Icons from "./Icons.jsx";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -15,23 +10,21 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   const dispatch = useDispatch();
-  const users = useSelector((state) => state.users.users); // Fetch users from userSlice
+  const users = useSelector((state) => state.users.users);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setError("");
 
-    // Dispatch login action with users array
     const loginPayload = { email, password, users };
     const result = dispatch(login(loginPayload));
 
-    // Check for errors
     if (!result.payload) {
       setError("Invalid email or password");
     }
   };
 
-  // Sample users for display
+  // Sample Users for Display
   const sampleUsers = [
     { email: "admin@example.com", password: "admin123", role: "Admin" },
     { email: "mod1@example.com", password: "mod123", role: "Moderator" },
@@ -43,19 +36,18 @@ const Login = () => {
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-blue-500 shadow-lg mb-6">
-            <FiLock className="w-10 h-10 text-white" />
+            <Icons.Lock /> {/* Use Icons.Lock */}
           </div>
           <h2 className="text-3xl font-bold text-gray-900 mb-2">Welcome!</h2>
-          <p className="text-gray-600">
-            Enter your credentials
-          </p>
+          <p className="text-gray-600">Enter your credentials</p>
         </div>
 
+        {/* Form */}
         <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
           <form onSubmit={handleSubmit} className="space-y-6">
             {error && (
               <div className="bg-red-50 text-red-500 px-4 py-3 rounded-lg text-sm flex items-center">
-                <FiAlertCircle className="w-5 h-5 mr-2" />
+                <Icons.Alert className="w-5 h-5 mr-2" /> 
                 {error}
               </div>
             )}
@@ -96,9 +88,9 @@ const Login = () => {
                       onChange={() => setShowPassword(!showPassword)}
                     />
                     {showPassword ? (
-                      <FiEyeOff className="w-5 h-5 text-gray-400 hover:text-gray-600 transition-colors" />
+                      <Icons.EyeOff /> 
                     ) : (
-                      <FiEye className="w-5 h-5 text-gray-400 hover:text-gray-600 transition-colors" />
+                      <Icons.Eye /> 
                     )}
                   </label>
                 </div>
@@ -115,11 +107,19 @@ const Login = () => {
 
           {/* Sample Users Section */}
           <div className="mt-8 pt-6 border-t border-gray-200">
-            <h3 className="text-sm font-medium text-gray-700 mb-3">Sample User Accounts</h3>
-            <div className="space-y-2 text-sm font-medium text-gray-600 flex justify-between items-center" >
-                <div className="p-2 bg-gray-50 rounded-lg  hover:bg-gray-100 transition-colors"> Role</div>
-                <div className="p-2 bg-gray-50 rounded-lg  hover:bg-gray-100 transition-colors"> Email</div>
-                <div className="p-2 bg-gray-50 rounded-lg  hover:bg-gray-100 transition-colors"> Password</div>
+            <h3 className="text-sm font-medium text-gray-700 mb-3">
+              Sample User Accounts
+            </h3>
+            <div className="space-y-2 text-sm font-medium text-gray-600 flex justify-between items-center">
+              <div className="p-2 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                Role
+              </div>
+              <div className="p-2 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                Email
+              </div>
+              <div className="p-2 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                Password
+              </div>
             </div>
             <div className="space-y-2 text-sm text-gray-600">
               {sampleUsers.map((user, index) => (
