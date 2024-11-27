@@ -6,8 +6,8 @@ import {
   useLocation,
 } from "react-router-dom";
 import { useSelector } from "react-redux";
-import Navbar from "./component/Navbar";
-import Login from "./component/Login";
+import Navbar from "./component/Navbar.jsx";
+import Login from "./component/Login.jsx";
 
 const ProtectedRoute = ({ children }) => {
   const currentUser = useSelector((state) => state.auth.currentUser);

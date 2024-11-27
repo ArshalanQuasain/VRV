@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addUser, updateUser, deleteUser } from "../store/UserSlice";
-import UsersHeader from "./Header/UserHeader";
-import UsersTableContent from "./UserTableContent";
-import EditRoleModal from "./EditRoleModal";
-import AddUserModal from "./AddUserModal";
+import UsersHeader from "./Header/UserHeader.jsx";
+import UsersTableContent from "./UserTableContent.jsx";
+import EditRoleModal from "./EditRoleModal.jsx";
+import AddUserModal from "./AddUserModal.jsx";
 
 const UsersTable = () => {
   const dispatch = useDispatch();

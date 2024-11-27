@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { login } from "../store/AuthSlice";
+import { login } from "../store/AuthSlice.js";
 import {
   FiLock,
   FiAlertCircle,

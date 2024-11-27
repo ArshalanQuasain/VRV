@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { logout } from "../store/AuthSlice";
+import { logout } from "../store/AuthSlice.js";
 import Icons from "./Icons.jsx";
 
 const LogoutButton = () => {
