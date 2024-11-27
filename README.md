@@ -44,5 +44,5 @@ A **Role-Based Access Control (RBAC)** dashboard built with **React**, **Redux T
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-repository-url.git
+git clone https://github.com/ArshalanQuasain/VRV.git
 cd rbac-dashboard
