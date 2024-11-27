@@ -1,8 +1,48 @@
-# React + Vite
+# RBAC Dashboard Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A **Role-Based Access Control (RBAC)** dashboard built with **React**, **Redux Toolkit**, and **TailwindCSS**. This application enables administrators to manage users, roles, and permissions with a secure and user-friendly interface.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+
+- **Login System**:
+  - Supports different roles: Admin, Moderator, and User.
+  - Role-based access to features and functionalities.
+  - User authentication using Redux Toolkit's global state management.
+  
+- **User Management**:
+  - Add, edit, and delete users.
+  - Assign roles to users.
+  - Toggle user activation status.
+
+- **Role Management**:
+  - Add and manage roles with custom permissions.
+
+- **Security**:
+  - Protected routes for authenticated users.
+  - Local state persistence using `redux-persist`.
+
+---
+
+## Technologies Used
+
+- **Frontend**:
+  - React
+  - Redux Toolkit
+  - TailwindCSS
+  - React Router DOM
+  - React Icons
+
+- **State Management**:
+  - Redux Toolkit
+  - redux-persist (for state persistence)
+
+---
+
+## Getting Started
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/your-repository-url.git
+cd rbac-dashboard
